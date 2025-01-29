@@ -1,0 +1,67 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class ConverterViewModel {
+    - _inputValue: MutableState<String>
+    - _convertedValue: MutableState<String>
+    - _currentCategory: MutableState<UnitCategory>
+    - _fromUnit: MutableState<Enum<*>>
+    - _toUnit: MutableState<Enum<*>>
+    + inputValue: String
+    + convertedValue: String
+    + currentCategory: UnitCategory
+    + fromUnit: Enum<*>
+    + toUnit: Enum<*>
+    + appendInput(value: String)
+    + clearInput()
+    + switchUnits()
+    + changeCategory(category: UnitCategory)
+    + changeFromUnit(unit: Enum<*>)
+    + changeToUnit(unit: Enum<*>)
+    - updateConversion()
+    - trimTrailingZeros(value: String): String
+}
+
+class MainActivity {
+    + onCreate(savedInstanceState: Bundle?)
+}
+
+interface PremiumFeatures {
+    + isPremium: Boolean
+}
+
+class PremiumFeaturesImpl {
+    + isPremium: Boolean
+}
+
+enum UnitCategory {
+    DISTANCE
+    WEIGHT
+    VOLUME
+}
+
+enum DistanceUnit {
+    METER
+    KILOMETER
+    MILE
+}
+
+enum WeightUnit {
+    GRAM
+    KILOGRAM
+    POUND
+}
+
+enum VolumeUnit {
+    LITER
+    MILLILITER
+    GALLON
+}
+
+ConverterViewModel --> UnitCategory
+ConverterViewModel --> DistanceUnit
+ConverterViewModel --> WeightUnit
+ConverterViewModel --> VolumeUnit
+PremiumFeaturesImpl ..|> PremiumFeatures
+MainActivity --> ConverterViewModel
+@enduml
