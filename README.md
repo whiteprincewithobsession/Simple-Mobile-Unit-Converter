@@ -37,8 +37,14 @@ To get started with the Unit Converter application, follow these steps:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/whiteprincewithobsession/Simple-Mobile-Unit-Converter.git
+   ```
+   **Open the Project:**
+   Open the project in Android Studio or your preferred IDE.
+
+   **Build and Run:**
+   Select the desired build flavour (e.g., premium) and run the application on your preferred platform.
    
-2. **Download APK build**:
+3. **Download APK build**:
    Find APK in Tags (Premium build and Basic build)
    
   
